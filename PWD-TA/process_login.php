@@ -1,11 +1,7 @@
 <?php
-include 'koneksi.php';
 session_start();
-// Cek apakah pengguna sudah login
-if (!isset($_SESSION['username'])) {
-    header("Location: dashboard.php");
-    exit();
-}
+include 'koneksi.php';
+
 // Mendapatkan data dari form
 $username_or_email = $_POST['username'];
 $password = $_POST['password'];
@@ -20,7 +16,12 @@ if ($result->num_rows > 0) {
     // Memeriksa password
     $row = $result->fetch_assoc();
     if (password_verify($password, $row['password'])) {
-        // Login berhasil, arahkan ke dashboard.php
+        // Login berhasil, menyimpan data ke session
+        $_SESSION['username'] = $row['username'];  // Menyimpan username ke session
+        $_SESSION['login_status'] = true;  // Menandakan pengguna sudah login
+        $_SESSION['user_id'] = $row['id'];  // Menyimpan user_id ke session (opsional)
+
+        // Arahkan ke dashboard.php setelah login berhasil
         header("Location: dashboard.php");
         exit();
     } else {
@@ -29,8 +30,7 @@ if ($result->num_rows > 0) {
 } else {
     echo "Username atau email tidak ditemukan.";
 }
-$stmt->close();
 
-// Menutup koneksi
+$stmt->close();
 $conn->close();
 ?>

@@ -1,6 +1,9 @@
 <?php
-if (!isset($_SESSION['user'])) {
-  header("Location: login.php");
+session_start();
+// Cek apakah pengguna sudah login
+if (!isset($_SESSION['username']) || $_SESSION['username'] == '' || !isset($_SESSION['login_status']) || $_SESSION['login_status'] !== true) {
+  // Jika sesi login tidak ditemukan atau tidak valid, arahkan ke halaman index.php
+  header("Location: index.php");
   exit();
 }
 // Simulasi data dari form checkout sebelumnya

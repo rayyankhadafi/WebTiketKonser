@@ -1,8 +1,4 @@
 <?php
-if (!isset($_SESSION['user'])) {
-    header("Location: login.php");
-    exit();
-}
 $servername = "localhost"; // Nama host
 $username = "root";        // Nama pengguna database
 $password = "";            // Kata sandi database
