@@ -1,0 +1,153 @@
+:root {
+  --primary: #ffffff;
+  --secondary: #1a2fa0;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: 'Assistant', sans-serif;
+  overflow-x: hidden; /* Menghilangkan scroll horizontal */
+}
+
+/*--Section1--*/
+.section1 {
+  background-image: url('background1.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative; /* Menambahkan relative untuk positioning anak */
+}
+
+.judul {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.judul-img {
+  width: 90%;
+  max-width: 600px; /* Membatasi lebar gambar */
+}
+
+.lokasi-info {
+  margin-top: 350px;
+  text-align: center;
+  font-size: 30px;
+  color: var(--primary);
+}
+
+/*--Section2--*/
+.section2 {
+  background-image: url('background2.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column; /* Mengubah tata letak menjadi vertikal */
+  justify-content: flex-start; /* Menyusun elemen dari atas */
+  align-items: center; /* Menyelaraskan elemen di tengah */
+  padding-top: 20px; /* Memberikan ruang di atas */
+}
+
+.lineup {
+  text-align: center;
+  position: relative;
+  margin-bottom: 20px; /* Memberikan jarak bawah antara gambar lineup dan tabel */
+}
+
+.lineup-img {
+  width: 25%; /* Membatasi ukuran gambar */
+  height: auto;
+}
+
+.image-table {
+  width: 100%;
+  margin: 20px auto;
+  border-spacing: 20px; /* Memberi jarak antar gambar */
+}
+
+.image-table td {
+  text-align: center;
+  vertical-align: top; /* Teks tetap sejajar di atas */
+}
+
+.image-table img {
+  width: 100%; /* Menyesuaikan gambar agar responsif */
+  max-width: 300px; /* Maksimal ukuran gambar */
+  height: auto;
+  border-radius: 10px; /* Menambahkan sudut melengkung */
+  transition: transform 0.3s; /* Efek zoom saat hover */
+}
+
+.image-table img:hover {
+  transform: scale(1.1); /* Efek zoom pada hover */
+}
+
+.image-table p {
+  font-size: 30px; /* Ukuran teks deskripsi */
+  font-weight: bold;
+  color: var(--primary); /* Warna teks sekunder */
+  margin-top: 10px; /* Memberikan jarak antara gambar dan teks */
+}
+
+/*--Section3--*/
+.section3 {
+  background-image: url('background3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative; /* Untuk penyesuaian elemen dengan posisi absolut */
+}
+
+.tickets {
+  position: absolute;
+  top: 20px; /* Letakkan gambar di atas */
+  text-align: center;
+}
+
+.tickets-img {
+  width: 25%;
+  height: auto;
+}
+
+.beli-tiket {
+  position: absolute;
+  margin-top: 300px; /* Jarak antara gambar dan tombol */
+}
+
+.btn-buy {
+  text-align: center;
+  width: 350px;
+  height: 40px;
+  display: inline-block;
+  padding: 16px 32px;
+  background-color: var(--primary);
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 30px;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Efek Hover pada Tombol */
+.btn-buy:hover {
+  background-color: var(--secondary);
+  transform: scale(1.05);
+  color: var(--primary);
+}
+
